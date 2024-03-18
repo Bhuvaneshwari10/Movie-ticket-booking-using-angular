@@ -1,0 +1,192 @@
+<form class="form-group" id="bookingForm" #bookingForm="ngForm">
+    <p>Place:</p>
+    <select id="place" name="place" [(ngModel)]="place" required>
+        <option value="Rajapalayam">Rajapalayam</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Rayagiri">Rayagiri</option>
+    </select>
+    <div id="show" name="show" *ngIf="place==='Rajapalayam'">
+        <p>Movies list:</p>
+        <select id="movie1" name="movie1" [(ngModel)]="movie1" required>
+            <option value="KK">KK</option>
+            <option value="Dev"> Dev</option>
+            <option value="Alaipayuthey">Alaipayuthey</option>
+        </select>
+    </div>
+    <div id="show1" name="show1" *ngIf="place==='Chennai'">
+        <p>Movies list:</p>
+        <select id="movie2" name="movie2" [(ngModel)]="movie2" required>
+            <option value="Mariyan">Mariyan</option>
+            <option value="Home"> Home</option>
+            <option value="JK">JK</option>
+        </select>
+    </div>
+    <div id="show2" name="show2" *ngIf="place==='Rayagiri'">
+        <p>Movies list:</p>
+        <select id="movie3" name="movie3" [(ngModel)]="movie3" required>
+            <option value="Premalu">Premalu</option>
+            <option value="Maya"> Maya</option>
+            <option value="Narnia">Narnia</option>
+        </select>
+    </div>
+    <div id="show3" name="show3" *ngIf="movie1==='KK'">
+        <p>Theatre list:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show3" name="show3" *ngIf="movie1==='Dev'">
+        <p>Movies list:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show3" name="show3" *ngIf="movie1==='Alaipayuthey'">
+        <p>Movies list:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show4" name="show4" *ngIf="movie2==='Mariyan'">
+        <p>Movies list:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show4" name="show4" *ngIf="movie2==='Home'">
+        <p>Movies list:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show4" name="show4" *ngIf="movie2==='JK'">
+        <p>Movies list:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show5" name="show5" *ngIf="movie3==='Premalu'">
+        <p>Theatre name:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show5" name="show5" *ngIf="movie3==='Maya'">
+        <p>Theatre name:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show5" name="show5" *ngIf="movie3==='Narnia'">
+        <p>Theatre name:</p>
+        <select id="theatre" name="theatre" [(ngModel)]="theatre" required>
+            <option value="theatre1">theatre1</option>
+            <option value="theatre2"> theatre2</option>
+            <option value="theatre3">theatre3</option>
+        </select>
+    </div>
+    <div id="show6" name="show6" *ngIf="theatre==='theatre1'">
+        <p>Timing list:</p>
+        <select id="timing" name="timing" [(ngModel)]="timing" required>
+            <option value="9am">9am</option>
+            <option value="10am"> 10am</option>
+            <option value="3am">3am</option>
+        </select>
+    </div>
+    <div id="show6" name="show6" *ngIf="theatre==='theatre2'">
+        <p>Timing list:</p>
+        <select id="timing" name="timing" [(ngModel)]="timing" required>
+            <option value="9am">9am</option>
+            <option value="10am"> 10am</option>
+            <option value="3am">3am</option>
+        </select>
+    </div>
+    <div id="show6" name="show6" *ngIf="theatre==='theatre3'">
+        <p>Timing list:</p>
+        <select id="timing" name="timing" [(ngModel)]="timing" required>
+            <option value="9am">9am</option>
+            <option value="10am"> 10am</option>
+            <option value="3am">3am</option>
+        </select>
+    </div>
+
+    <br>
+    <div class="output" id="output" *ngIf="showOutput">
+        <h4>Details:</h4>
+        <table>
+            <tr>
+                <td>Place:</td>
+                <td><span id="place">{{ place }}</span></td>
+            </tr>
+            <tr>
+                <div *ngIf="movie1==='KK'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie1 }}</span></td>
+                </div>
+                <div *ngIf="movie1==='Dev'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie1 }}</span></td>
+                </div>
+                <div *ngIf="movie1==='Alaipayuthey'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie1 }}</span></td>
+                </div>
+                <div *ngIf="movie2==='Mariyan'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie2 }}</span></td>
+                </div>
+                <div *ngIf="movie2==='Home'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie2 }}</span></td>
+                </div>
+                <div *ngIf="movie2==='JK'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie1 }}</span></td>
+                </div>
+                <div *ngIf="movie3==='Premalu'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie1 }}</span></td>
+                </div>
+                <div *ngIf="movie3==='Maya'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie1 }}</span></td>
+                </div>
+                <div *ngIf="movie3==='Narnia'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ movie1 }}</span></td>
+                </div>
+                <div *ngIf="theatre==='theatre1'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ theatre1 }}</span></td>
+                </div>
+                <div *ngIf="theatre==='theatre2'">
+                    <td>Movies:</td>
+                    <td><span id="place">{{ theatre2 }}</span></td>
+                </div>
+                <div *ngIf="theatre==='theatre3'">
+                    <td>Theatre:</td>
+                    <td><span id="place">{{ theatre3 }}</span></td>
+                </div>
+
+            </tr>
+        </table>
+    </div>
+    <br>
+    <button type="submit" name="button" (click)="onClick()">Submit</button>
+</form>
